@@ -1,0 +1,48 @@
+
+
+
+.lights {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 3rem;
+}
+ 
+
+
+@keyframes swing{
+    0% {transform:rotate(20deg);}
+    50% {transform:rotate(-20deg);}
+    100% {transform:rotate(20deg);}
+}
+
+@keyframes glow{
+    0% { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #EAB72F, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #EAB72F, 0 0 70px #EA5C2F}
+    25% { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #36EA2F, 0 0 40px #36EA2F, 0 0 50px #36EA2F, 0 0 60px #36EA2F, 0 0 70px #36EA2F}
+    50% { textShadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #362FEA, 0 0 60px #e60073, 0 0 70px #362FEA}
+    100% { textShadow: 0 0 10px #fff, 0 0 20px #ff4da6, 0 0 30px #362FEA, 0 0 40px #EA5C2F, 0 0 50px #EAB72F, 0 0 60px #ff4da6, 0 0 70px #ff4da6}
+}
+
+.glow {
+    font-size: 80px;
+    color: #fff;
+    text-align: center;
+    animation: glow 1s infinite ease-in-out alternate;
+}
+    
+.lamp{
+    background-color:#d2691e;
+    width:100px;
+    height:50px;
+    border-bottom-right-radius:250px;
+    border-bottom-left-radius:250px;
+}
+    
+.light{
+    height:26px;
+    width:14px;
+    background-color:yellow;
+    border-radius:50%;
+    animation: swing 2s infinite ease-in-out;
+    border: 1px solid red
+}

@@ -1,0 +1,97 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Diwali 2020</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="../index.css" />
+    <link rel="stylesheet" href="with-waapi.css" />
+</head>
+
+<body>
+    <main>
+        <h1 class="glow" id="banner">Happy Diwali 2020</h1>
+        <div class="lights">
+            <div>
+                <div class="light" id="light-1"></div>
+                <div class="lamp"></div>
+            </div>
+
+            <div>
+                <div class="light" id="light-2"></div>
+                <div class="lamp"></div>
+            </div>
+        </div>
+
+        <div class="actions">
+            <i data-feather="play-circle" width="32" height="32" color="#d2691e" class="icon" onclick="play();"></i>
+            <i data-feather="pause-circle" width="32" height="32" color="#d2691e" class="icon" onclick="pause();"></i>
+        </div>
+
+        <div class="note">
+            <a href="./with-css.html">Try out the pure CSS version</a>
+        </div>
+    </main>
+
+    <script>
+        feather.replace();
+
+        let element = document.getElementById('light-1');
+       
+        const animateX = element.animate(
+            [
+                { transform: 'rotate(20deg)' },
+                { transform: 'rotate(-20deg)'},
+                { transform: 'rotate(20deg)' }
+            ], {
+                duration: 2000,
+                iterations: Infinity,
+                easing: 'ease-in-out'
+            }
+        );
+
+        const animateY = document.getElementById('light-2').animate(
+            [
+                { transform: 'translateY(0)' },
+                { transform: 'translateY(-80%)' }   
+            ], 
+            {
+                fill: 'forwards',
+                easing: 'steps(4, end)',
+                iterations: Infinity,
+                duration: 2000
+            }
+        );
+
+        const glow = document.getElementById('banner').animate(
+            [
+                { 'textShadow': '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #EAB72F, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #EAB72F, 0 0 70px #EA5C2F'},
+                { 'textShadow': '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #36EA2F, 0 0 40px #36EA2F, 0 0 50px #36EA2F, 0 0 60px #36EA2F, 0 0 70px #36EA2F'},
+                { 'textShadow': '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #362FEA, 0 0 60px #e60073, 0 0 70px #362FEA'},
+                { 'textShadow': '0 0 10px #fff, 0 0 20px #ff4da6, 0 0 30px #362FEA, 0 0 40px #EA5C2F, 0 0 50px #EAB72F, 0 0 60px #ff4da6, 0 0 70px #ff4da6'},
+            ], 
+            { 
+                easing: 'ease-in-out',
+                iterations: Infinity,
+                duration: 1000,
+                direction: 'alternate'
+            }
+        );
+
+        const pause = () => {
+            animateX.pause();
+            animateY.pause();
+            glow.pause();
+        }
+
+        const play = () => {
+            animateX.play();
+            animateY.play();
+            glow.play();
+        }
+        
+    </script>
+</body>
+
+</html>
